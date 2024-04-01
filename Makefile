@@ -8,6 +8,9 @@ objects=$(patsubst src/%.cpp,build/%.o,$(cxx_sources)) $(patsubst src/%.c,build/
 
 all: build/$(BIN)
 
+clean:
+    rm -r build/
+
 
 build/$(BIN): $(objects)
 	$(CC) -c -o $@ $^ $(CC_FLAGS)
